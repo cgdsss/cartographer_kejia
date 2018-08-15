@@ -8,3 +8,5 @@ https://pan.baidu.com/s/1BOmIxIsTsqUSEoJEzgqZjw#list/path=%2F
 > rosrun map_server map_saver -f 1
 
 > rosservice call /write_state ${HOME}/1.pbstream
+
+> roslaunch cartographer_kejia localization_lidar_2d.launch load_state_filename:=${HOME}/1.pbstream
