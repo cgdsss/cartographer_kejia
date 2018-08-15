@@ -1,11 +1,15 @@
 <launch>
   <param name="/use_sim_time" value="true" />
 
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory
               $(find cartographer_kejia)/configuration_files
-          -configuration_basename kejia_urg_lidar_2d_localization.lua"
+          -configuration_basename kejia_urg_lidar_2d_localization.lua
+	  -load_state_filename $(arg load_state_filename)"
       output="screen">
   </node>
 
